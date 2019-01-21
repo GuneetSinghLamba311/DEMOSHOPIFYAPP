@@ -13,9 +13,10 @@ import SwiftyJSON
 
 class ProductDetailsController: UIViewController {
 
-    var productsId:String?
-    var imgURL:URL?
+    var productsId:String? // getting from HomeController.
+    var imgURL:URL?         // gettin from HomeController.
     
+    // Outlets for displaying data to user for specific item.
     @IBOutlet weak var productTitle: UILabel!
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productID: UILabel!
@@ -25,7 +26,9 @@ class ProductDetailsController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Product Details URL
         let ShopifyDetailsurl = "https://shopicruit.myshopify.com/admin/products/\(self.productsId!).json?page=1&access_token=c32313df0d0ef512ca64d5b336a0d7c6&access_token=c32313df0d0ef512ca64d5b336a0d7c6"
+        // using alamofire for request.
         Alamofire.request(ShopifyDetailsurl, method: .get, parameters: nil).responseJSON {
             
             (response) in
@@ -52,10 +55,10 @@ class ProductDetailsController: UIViewController {
                             
                         }
                         
-                    self.productID.text = self.productsId!
+                    self.productID.text = "ProductID: \(self.productsId!)"
                     self.productTitle.text = String(describing: json["product"]["title"])
                     self.productDescription.text = String(describing: json["product"]["body_html"])
-                    self.productPrice.text = String(describing: json["product"]["variants"][0]["price"])
+                        self.productPrice.text = "$ \(String(describing: json["product"]["variants"][0]["price"]))"
                     self.productType.text = String(describing: json["product"]["product_type"])
                             
                     }

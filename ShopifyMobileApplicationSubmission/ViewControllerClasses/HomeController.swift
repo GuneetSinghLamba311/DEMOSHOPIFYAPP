@@ -23,6 +23,8 @@ class HomeController: UIViewController,UICollectionViewDataSource,UICollectionVi
         collectionView.reloadData()
         }
     
+    
+    // CollectionView Controller Methods for collectionView with data.
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return productObject.count
     }
@@ -32,7 +34,6 @@ class HomeController: UIViewController,UICollectionViewDataSource,UICollectionVi
         let data: Data = try Data.init(contentsOf: productObject[indexPath.row].imgSrc)
         cell.ProductImage.image=UIImage(data:data)
             cell.ProductLabel.text = productObject[indexPath.row].title
-            cell.productDescription.text = productObject[indexPath.row].description
         }
         catch{
             print(error)
@@ -43,17 +44,19 @@ class HomeController: UIViewController,UICollectionViewDataSource,UICollectionVi
    
  }
     
+    
+    // Performing action on pressing the collectionView item
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.index = indexPath.row
         performSegue(withIdentifier: "showDetails", sender: self)
         }
     
+    // Passsing data on clicking the collection view.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let ViewController = segue.destination as! ProductDetailsController
         ViewController.productsId = productObject[index].productId
         ViewController.imgURL = productObject[index].imgSrc
-        
-}
+    }
     
     
     

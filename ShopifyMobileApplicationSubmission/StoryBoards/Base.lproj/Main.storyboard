@@ -18,10 +18,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Czq-ke-tTQ">
-                                <rect key="frame" x="37" y="156" width="300" height="300"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Lzs-l9-7MG">
+                                <rect key="frame" x="16" y="20" width="343" height="134"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="SHOW PRODUCTS"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Czq-ke-tTQ">
+                                <rect key="frame" x="16" y="223" width="343" height="164"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                <state key="normal" title="SHOW PRODUCTS">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                                 <connections>
                                     <action selector="showProducts:" destination="AcQ-i1-DNh" eventType="touchUpInside" id="OgZ-f7-hhw"/>
                                     <segue destination="XkE-h7-6dv" kind="show" identifier="showProducts" id="Ihr-04-kCP"/>
@@ -34,7 +41,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zcw-P9-R3q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-169" y="783"/>
+            <point key="canvasLocation" x="-170.40000000000001" y="782.15892053973016"/>
         </scene>
         <!--Shopify Collection List-->
         <scene sceneID="tne-QT-ifu">
@@ -73,19 +80,11 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOF-jx-J4q">
-                                                    <rect key="frame" x="0.0" y="245" width="263" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                         </view>
                                         <connections>
                                             <outlet property="ProductImage" destination="Ufh-I9-wOT" id="liU-du-7Pr"/>
                                             <outlet property="ProductLabel" destination="dDL-D8-7Cl" id="5zv-C3-Fkg"/>
-                                            <outlet property="productDescription" destination="xOF-jx-J4q" id="25B-HV-4hr"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -108,10 +107,10 @@
             </objects>
             <point key="canvasLocation" x="1623" y="787"/>
         </scene>
-        <!--Product Details Controller-->
+        <!--Product Details-->
         <scene sceneID="Kbr-pH-hhj">
             <objects>
-                <viewController id="Pxh-ux-UwR" customClass="ProductDetailsController" customModule="ShopifyMobileApplicationSubmission" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Product Details" id="Pxh-ux-UwR" customClass="ProductDetailsController" customModule="ShopifyMobileApplicationSubmission" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5oi-gq-MNe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -134,7 +133,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbA-uf-7Sw">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbA-uf-7Sw">
                                 <rect key="frame" x="16" y="368" width="315" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -191,4 +190,7 @@
             <point key="canvasLocation" x="728.79999999999995" y="786.65667166416802"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo.jpg" width="740" height="416"/>
+    </resources>
 </document>
